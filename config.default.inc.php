@@ -4,7 +4,7 @@
      * Namespace
      * 
      */
-    namespace Plugin\JsCompressor;
+    namespace Plugin\JSCompressor;
 
     /**
      * Plugin Config Data
@@ -27,12 +27,12 @@
      */
     $routes = array(
         '^/compress/all$' => array(// G
-            'controller' => 'JsCompressor',
+            'controller' => 'JSCompressor',
             'action' => 'actionCompressAll',
             'view' => dirname(__FILE__) . '/raw.inc.php'
         ),
         '^/compress/([a-zA-Z0-9\-_]+)$' => array(// G
-            'controller' => 'JsCompressor',
+            'controller' => 'JSCompressor',
             'action' => 'actionCompress',
             'view' => dirname(__FILE__) . '/raw.inc.php'
         )
@@ -68,5 +68,5 @@
      * Storage
      * 
      */
-    $key = 'TurtlePHP-JsCompressorPlugin';
+    $key = 'TurtlePHP-JSCompressorPlugin';
     \Plugin\Config::add($key, $pluginConfigData);

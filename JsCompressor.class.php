@@ -4,15 +4,15 @@
     namespace Plugin;
 
     /**
-     * JsCompressor
+     * JSCompressor
      * 
-     * JsCompressor plugin for TurtlePHP.
+     * JSCompressor plugin for TurtlePHP.
      * 
      * @author  Oliver Nassar <onassar@gmail.com>
      * @abstract
      * @extends Base
      */
-    abstract class JsCompressor extends Base
+    abstract class JSCompressor extends Base
     {
         /**
          * _configPath
@@ -342,4 +342,4 @@
     $info = pathinfo(__DIR__);
     $parent = ($info['dirname']) . '/' . ($info['basename']);
     $configPath = ($parent) . '/config.inc.php';
-    \Plugin\JsCompressor::setConfigPath($configPath);
+    \Plugin\JSCompressor::setConfigPath($configPath);

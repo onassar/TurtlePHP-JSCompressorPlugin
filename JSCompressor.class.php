@@ -18,7 +18,7 @@
          * _configPath
          * 
          * @access  protected
-         * @var     string
+         * @var     string (default: 'config.default.inc.php')
          * @static
          */
         protected static $_configPath = 'config.default.inc.php';
@@ -27,7 +27,7 @@
          * _initiated
          * 
          * @access  protected
-         * @var     bool
+         * @var     bool (defualt: false)
          * @static
          */
         protected static $_initiated = false;
@@ -90,11 +90,8 @@
             $files = $configData['batches'][$batchKey]['files'];
             $content = '';
             foreach ($files as $file) {
-                ob_start();
-                include ($file);
-                $_response = ob_get_contents();
-                ob_end_clean();
-                $content .= $_response;
+                $response = static::_renderPath($file);
+                $content .= $response;
             }
             return $content;
         }

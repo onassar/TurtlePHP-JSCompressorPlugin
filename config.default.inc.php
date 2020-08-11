@@ -1,12 +1,6 @@
 <?php
 
     /**
-     * Namespace
-     * 
-     */
-    namespace Plugin\JSCompressor;
-
-    /**
      * Plugin Config Data
      * 
      */
@@ -69,4 +63,4 @@
      * 
      */
     $key = 'TurtlePHP-JSCompressorPlugin';
-    \Plugin\Config::add($key, $pluginConfigData);
+    TurtlePHP\Plugin\Config::set($key, $pluginConfigData);

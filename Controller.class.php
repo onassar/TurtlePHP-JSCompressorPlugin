@@ -3,10 +3,10 @@
     /**
      * JSCompressorController
      * 
-     * @extends \Turtle\Controller
+     * @extends \TurtlePHP\Controller
      * @final
      */
-    final class JSCompressorController extends \Turtle\Controller
+    final class JSCompressorController extends \TurtlePHP\Controller
     {
         /**
          * actionCompress
@@ -17,7 +17,7 @@
          */
         public function actionCompress(string $batchKey)
         {
-            $path = \Plugin\JSCompressor::getBatchPath($batchKey);
+            $path = \TurtlePHP\Plugin\JSCompressor::getBatchPath($batchKey);
             $path = WEBROOT . ($path);
             $content = file_get_contents($path);
             $this->_pass('response', $content);
@@ -32,11 +32,11 @@
          */
         public function actionCompressAll()
         {
-            $config = \Plugin\Config::retrieve('TurtlePHP-JSCompressorPlugin');
+            $config = \TurtlePHP\Plugin\Config::get('TurtlePHP-JSCompressorPlugin');
             $batches = $config['batches'];
             $paths = array();
             foreach ($batches as $key => $settings) {
-                $paths[$key] = \Plugin\JSCompressor::getBatchPath($key);
+                $paths[$key] = \TurtlePHP\Plugin\JSCompressor::getBatchPath($key);
             }
             $success = true;
             $data = compact('paths');

@@ -1,7 +1,7 @@
 <?php
 
     // namespace
-    namespace Plugin;
+    namespace TurtlePHP\Plugin;
 
     /**
      * JSCompressor
@@ -43,7 +43,7 @@
         {
             $configData = static::_getConfigData();
             $routes = $configData['routes'];
-            \Turtle\Application::addRoutes($routes);
+            \TurtlePHP\Application::addRoutes($routes);
         }
 
         /**
@@ -339,4 +339,4 @@
     $info = pathinfo(__DIR__);
     $parent = ($info['dirname']) . '/' . ($info['basename']);
     $configPath = ($parent) . '/config.inc.php';
-    \Plugin\JSCompressor::setConfigPath($configPath);
+    \TurtlePHP\Plugin\JSCompressor::setConfigPath($configPath);

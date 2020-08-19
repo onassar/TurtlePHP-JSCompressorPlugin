@@ -1,12 +1,15 @@
 <?php
 
+    // Namespace overhead
+    namespace Controller;
+
     /**
-     * JSCompressorController
+     * JSCompressor
      * 
      * @extends \TurtlePHP\Controller
      * @final
      */
-    final class JSCompressorController extends \TurtlePHP\Controller
+    final class JSCompressor extends \TurtlePHP\Controller
     {
         /**
          * actionCompress

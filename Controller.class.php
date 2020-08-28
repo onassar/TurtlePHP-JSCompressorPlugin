@@ -6,6 +6,14 @@
     /**
      * JSCompressor
      * 
+     * Provides two controller actions which can be useful for dynamically
+     * generating batches based on HTTP requests.
+     * 
+     * Very important to note that if this is called via something like a build
+     * script which runs under a different user:group combination as HTTP
+     * requests do, you can run into permission issues when attempting access
+     * and/or overwrite existing batch files.
+     * 
      * @extends \TurtlePHP\Controller
      * @final
      */

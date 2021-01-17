@@ -21,12 +21,12 @@
      */
     $routes = array(
         '^/compress/all$' => array(// G
-            'controller' => 'JSCompressor',
+            'controller' => 'Controller\\JSCompressor',
             'action' => 'actionCompressAll',
             'view' => dirname(__FILE__) . '/raw.inc.php'
         ),
         '^/compress/([a-zA-Z0-9\-_]+)$' => array(// G
-            'controller' => 'JSCompressor',
+            'controller' => 'Controller\\JSCompressor',
             'action' => 'actionCompress',
             'view' => dirname(__FILE__) . '/raw.inc.php'
         )
